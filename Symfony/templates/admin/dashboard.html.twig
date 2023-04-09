@@ -1,0 +1,24 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block content_title %}Tableau de bord CarBuy{% endblock %}
+
+{% block main %}
+    <main class="dashboard">
+        <h2>Quelques statistiques de CarBuy</h2>
+        <div class="admin-container">
+            <div class="admin-case">
+                <p>Nombre de voitures</p>
+                <p>{{ voiture }}</p>
+            </div>
+            <div class="admin-case">
+                <p>Nombre de commandes</p>
+                <p>{{ commande }}</p>
+            </div>
+            <div class="admin-case">
+                <p>Nombre d'utilisateurs</p>
+                <p>{{ utilisateur }}</p>
+            </div>
+
+        </div>
+    </main>
+{% endblock %}

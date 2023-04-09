@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CarBuy - Erreur sur le panier{% endblock %}
+
+{% block body %}
+
+    {% if existant == 'Erreur' and suppression == 'suppr'%}
+    <main class="erreurPanier">
+        <div>
+            <p>Erreur ! Cette voiture est déjà présente dans votre panier </p>
+            <a href={{ path('panier') }}><img src="https://img.icons8.com/FFFFFF/m_outlined/2x/return.png" alt="">Aller vers votre panier</a>
+        </div>
+    </main>
+    {% elseif suppression == 'Erreur' and existant == 'Existe'%}
+        <main class="erreurPanier">
+            <div>
+                <p>Erreur ! Cette voiture n'existe pas  ou n'est pas présente dans votre panier! </p>
+                <a href="{{ path('panier') }}"><img src="https://img.icons8.com/FFFFFF/m_outlined/2x/return.png" alt="">Aller vers votre panier</a>
+            </div>
+
+        </main>
+    {% endif %}
+
+{% endblock %}

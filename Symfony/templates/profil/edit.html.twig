@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CarBuy - Modifier votre profil{% endblock %}
+
+{% block body %}
+    <main class="editprofil">
+    <h2>Modifier votre profil</h2>
+
+    {{ include('profil/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+
+        <div class="retour">
+            <a href="{{ path('profil') }}"><img src="https://img.icons8.com/FFFFFF/m_outlined/2x/return.png" alt="">Retour au profil</a>
+        </div>
+    </main>
+
+{% endblock %}

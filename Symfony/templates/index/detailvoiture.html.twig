@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CarBuy - Détail de la voiture{% endblock %}
+
+
+{% block body %}
+    {% if not voiture %}
+
+        <main class="detailErreur">
+                <p>Cette voiture n'existe pas !</p>
+                <a href={{ path('voitures') }}>Retour à la liste des voitures</a>
+        </main>
+    {% else %}
+    <main class="detailvoiture">
+        <div class="image">
+            <img src={{ asset('images/'~voiture.image)}} alt="{{ voiture.nom }}">
+        </div>
+            <div class="legende">
+                <p>{{ voiture.nom }}</p>
+                <p>{{ voiture.prix | number_format(0 , '.',' ') }} €</p>
+            </div>
+            <div class="panier">
+                <a href={{ path('ajout_panier' , {'id' : voiture.id}) }}><img src="https://img.icons8.com/FFFFFF/ios11/2x/buy.png" alt="">Ajouter au panier</a>
+            </div>
+        <h2>Informations sur la voiture</h2>
+        <div class="infovoiture">
+
+            <div class="list">
+                <img class="center-marque" src="https://img.icons8.com/FF4137/ios11/2x/copyright.png" alt="">
+                <p class="nom">Marque</p>
+                <p>{{ voiture.marque.nom }}</p>
+            </div>
+            <div class="list">
+                <img src="https://img.icons8.com/FF4137/ios11/2x/price-tag.png" alt="">
+                <p class="nom">Catégorie</p>
+                <p>{{ voiture.categorie.name }}</p>
+            </div>
+              <div class="list">
+                  <img src="https://img.icons8.com/FF4137/ios11/2x/gas-station.png" alt="">
+                <p class="nom">Carburant</p>
+                <p>{{ voiture.carburant }}</p>
+            </div>
+            <div class="list">
+                <img class="transmi" src="https://img.icons8.com/FF4137/ios11/2x/gearbox-selector.png" alt="">
+                <p class="nom">Transmission</p>
+                <p>{{ voiture.vitesse }}</p>
+            </div>
+            <div class="list">
+                <img src="https://img.icons8.com/FF4137/ios11/2x/speedometer.png" alt="">
+                <p class="nom">Puissance</p>
+                <p>{{ voiture.cv }} CV</p>
+            </div>
+
+        </div>
+
+    </main>
+    {% endif %}
+
+{% endblock %}

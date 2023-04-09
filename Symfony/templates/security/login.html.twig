@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CarBuy - Se connecter à CarBuy{% endblock %}
+
+
+{% block body %}
+    <main class="login">
+        <h2 class="h3 mb-3 font-weight-normal">Se connecter à CarBuy</h2>
+        <form method="post">
+          {#  {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            {% if app.user %}
+                <div class="mb-3">
+                    You are logged in as {{ app.user.username }}, <a href="{{ path('logout') }}">Logout</a>
+                </div>
+            {% endif %}#}
+
+            <div class="form">
+                <div class="field">
+                    <label for="inputEmail">E-mail</label>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                </div>
+                <div class="field">
+                    <label for="inputPassword">Mot de passe</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                </div>
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}"
+                >
+                <p>Vous n'avez pas compte ?<a href="{{ path('register') }}">S'inscrire ici</a></p>
+                <button class="btn btn-lg btn-primary" type="submit">
+                    <img src="https://img.icons8.com/FFFFFF/ios11/2x/login-rounded-right.png" alt="">Connexion</button>
+            </div>
+        </form>
+    </main>
+{% endblock %}

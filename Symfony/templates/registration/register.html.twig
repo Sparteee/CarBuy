@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CarBuy - S'inscrire à CarBuy{% endblock %}
+
+{% block body %}
+    <main class="inscription">
+        <h2>S'inscrire sur CarBuy</h2>
+        <div class="register">
+
+            {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.nom) }}
+                {{ form_row(registrationForm.prenom) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.plainPassword, {
+                    label: 'Password'
+                }) }}
+                {{ form_row(registrationForm.agreeTerms) }}
+
+                <button type="submit" class="btn"><img src="https://img.icons8.com/FFFFFF/ios11/2x/edit-user-male.png">S'inscrire</button>
+            {{ form_end(registrationForm) }}
+        </div>
+    </main>
+{% endblock %}

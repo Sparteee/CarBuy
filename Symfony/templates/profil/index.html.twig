@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CarBuy - Mon profil{% endblock %}
+
+{% block body %}
+    <main class="profil">
+        <h2>Profil de {{ utilisateur.prenom }} {{ utilisateur.nom }}</h2>
+        <div class="infoprofil">
+
+            <div class="list-profil">
+                <p class="text1">Nom</p>
+                <p class="text2">{{ utilisateur.nom }}</p>
+            </div>
+            <div class="list-profil">
+                <p class="text1">Prénom</p>
+                <p class="text2">{{ utilisateur.prenom }}</p>
+            </div>
+            <div class="list-profil">
+                <p class="text1">Email</p>
+                <p class="text2">{{ utilisateur.email }}</p>
+            </div>
+        </div>
+        <div class="edit">
+            <a href={{ path('modifier_profil' , {'id' : utilisateur.id}) }}><img src="https://img.icons8.com/FFFFFF/ios11/2x/edit.png">Modifier mon profil</a>
+        </div>
+        <div class="container-table">
+        <h2>Vos commandes de voitures</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Numéro de commande</th>
+                <th>Votiure</th>
+                <th>Prix de la voiture</th>
+                <th>Date de la commande</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for commande in commandes %}
+                <tr>
+                    <td>#{{ commande.id }}</td>
+                    <td>{{ commande.nom }} </td>
+                    <td>{{ commande.prix }} €</td>
+                    <td>{{ commande.date.format('Y-m-d')|format_datetime('full', 'none', locale='fr')}}</td>
+                    <td>
+                        <a href={{ path('supprimer_commande' , {'id' : commande.id}) }}>Supprimer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td>Vous n'avez aucune commande en attente !</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,862 @@
+/* CSS général */
+
+html{
+    height: 100%;
+}
+
+body{
+    background-color: #f7f7f7;
+}
+
+h1{
+    font-family: 'Roboto Serif', serif;
+    font-size: 52px;
+    font-weight: unset;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    cursor:default;
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+/* Menu Burger */
+
+p.burger{
+    line-height: 1;
+    font-size:2.5rem;
+    color: #000000;
+    padding-right:1rem ;
+    padding-left: 1rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    margin-right: 1rem;
+}
+
+p.burger::before {
+    content: '\2630';
+}
+
+p.burger.icone{
+    display: none;
+}
+
+/* Icone Fermeture */
+
+#fermeture_menu{
+    text-align: right ;
+    border : none ;
+    padding : 0 ;
+    margin-right: 0rem;
+    color: black;
+    cursor: pointer;
+}
+
+#fermeture_menu::before {
+    content: '\2716';
+    font-size: 2rem;
+}
+
+/* Navigation Bar */
+
+nav#menu{
+    animation-name: fondu ;
+    animation-duration: 0.5s;
+
+}
+@keyframes fondu {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+nav{
+    display: none;
+    z-index: 1 ;
+    position: fixed ;
+    top : 0 ;
+    right: 0;
+    height: 100vh;
+    font-size: 1.5rem ;
+    text-align: right ;
+    background-color: #f7f7f7;
+}
+
+nav li a img{
+    width: 24px;
+    height: 24px;
+    padding-right: 1rem;
+    margin-top: 1rem;
+}
+
+@keyframes icone {
+    from{
+        content : '\2630'
+    }
+    to {
+        content : '\2716'
+    }
+}
+
+nav.ouvert{
+    right : 0 ;
+    display: block;
+  /*  background-color: #1a1a1a;*/
+    border-left: 2px solid #a8a8a8;
+    animation-name: icone;
+
+}
+
+
+
+
+nav li{
+    padding : 2rem 0 ;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    list-style-type: none;
+    margin-left: 1rem;
+}
+
+nav ul{
+    padding : 1.2rem 2rem;
+    text-decoration: none;
+}
+
+nav li:last-of-type{
+    border : none ;
+}
+
+nav ul a {
+    display:block;
+    color:black;
+    text-decoration:none;
+    cursor: pointer;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav li a:hover{
+    border-bottom: black solid 2px;
+}
+/* Page accueil */
+
+
+.accueil h2{
+    text-align: center;
+    margin-top: 4rem;
+    font-family: Roboto , sans-serif;
+    font-size: 32px;
+}
+
+.accueil .textaccueil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.accueil .textaccueil p{
+    font-family: Roboto Serif, 'serif';
+    font-size: 24px;
+}
+
+.accueil .textaccueil a{
+    background-color: #ff5950;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.8rem 2rem 0.8rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-family: Roboto , sans-serif;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.accueil .textaccueil a:hover{
+    background-color: #ff291d;
+}
+
+.accueil .textaccueil a>img{
+    width: 28px;
+    height: 28px;
+    margin-right: 0.5rem;
+}
+
+/* Page voiture */
+
+.voiture h2{
+    text-align: center;
+    font-size: 30px;
+    font-family: Roboto , sans-serif;
+}
+.voiture .selections .filtre{
+    margin-top: 24px;
+    font-family: Roboto , sans-serif;
+}
+
+.voiture .selections{
+    display: flex;
+    justify-content: center;
+}
+
+.voiture .selections select{
+    padding: 0.6rem 2rem 0.6rem 1rem;
+    text-align: left;
+    border-radius: 4px;
+    margin: 1rem;
+
+}
+
+.voiture .selections button {
+    background-color: #ff5950;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    padding: 0.8rem 2rem 0.8rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    font-family: Roboto , sans-serif;
+    border-radius: 3px;
+}
+
+.voiture .selections button:hover{
+    background-color: #ff291d;
+}
+
+.voiture .selections button>img{
+    width: 13px;
+    height: 13px;
+    margin-right: 0.5rem;
+}
+
+.voiture .container-case{
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+
+.voiture .case{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin-right: 2rem;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 9px;
+    text-decoration : none;
+    color: black;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.voiture .case:hover{
+    transform: scale(1.06);
+    -webkit-box-shadow: 1px 1px 8px 4px #CBCBCB;
+    box-shadow: 1px 1px 8px 4px #CBCBCB;
+}
+
+.voiture .case img{
+    border-radius: 7px;
+}
+
+.voiture .case .info{
+    text-align: center;
+    background-color: #FFFFFF;
+    font-family: Roboto , sans-serif;
+}
+
+/* Page détail voiture */
+.detailvoiture .image{
+    display: flex;
+    justify-content: center;
+}
+
+.detailvoiture .image img{
+    width: 40%;
+}
+
+.detailvoiture .legende{
+    display: flex;
+    justify-content: space-around;
+}
+
+.detailvoiture .legende p{
+    color: #003e70;
+    font-family: 'Roboto Serif' , 'serif';
+    font-weight: 600;
+    font-size: 26px;
+}
+.detailvoiture .panier{
+    display: flex;
+    justify-content: center;
+}
+.detailvoiture .panier a{
+    background-color: #ff5950;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.8rem 2rem 0.8rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    font-family: Roboto , sans-serif;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+.detailvoiture .panier a:hover{
+    background-color: #ff291d;
+}
+
+.detailvoiture .panier a>img{
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+}
+
+.detailvoiture h2{
+    text-align: center;
+    font-weight: unset;
+    font-family: Roboto , sans-serif;
+    margin-top: 4rem;
+}
+
+
+.detailvoiture .infovoiture .list img{
+    width: 32px;
+    height: 32px;
+    margin-left: 1.25rem;
+}
+
+.detailvoiture .infovoiture .list .transmi{
+    margin-left: 2rem;
+}
+
+.detailvoiture .infovoiture .list .center-marque{
+    margin-left: 1rem;
+}
+
+.detailvoiture .infovoiture .list p{
+    text-align: center;
+    font-family: Roboto , sans-serif;
+}
+
+.detailvoiture .infovoiture .list .nom{
+    font-weight: bold;
+}
+
+.detailvoiture .infovoiture{
+    display: flex;
+    justify-content: space-evenly;
+}
+/* CSS erreur page detail voiture */
+
+.detailErreur {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.detailErreur p{
+    font-weight: bold;
+    font-family: Roboto , sans-serif;
+}
+
+.detailErreur a{
+    background-color: #ff5950;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.8rem 2rem 0.8rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    font-family: Roboto , sans-serif;
+    border-radius: 3px;
+}
+
+.detailErreur a:hover{
+    background-color: #ff291d;
+}
+
+/* Style des formulaires du site ( Login / Register / Edit Profil )*/
+.login p{
+    font-family: Roboto , sans-serif;
+}
+
+.login p>a{
+    margin-left: 0.5rem;
+    font-family: Roboto , sans-serif;
+}
+
+.login h2 , .editprofil h2{
+    text-align: center;
+    font-family: Roboto , sans-serif;
+}
+.inscription h2{
+    text-align: center;
+    font-family: Roboto , sans-serif;
+    margin-bottom: 1rem;
+}
+
+.register{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 67vh;
+}
+
+.login form {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+.login .form , .register form[name="registration_form"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem 4rem;
+    border-radius: 9px;
+}
+.login .form .field label , .register div label , .editprofil #utilisateur div label{
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-family: Roboto Serif , 'serif';
+    margin-bottom: 0.5rem;
+}
+
+.login .form button , .register button{
+    width: fit-content;
+    background-color: #ff5950;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    padding: 0.8rem 2rem 0.8rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    font-family: Roboto , sans-serif;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-left: 1.5rem;
+    margin-top: 2rem;
+
+}
+
+.login .form button:hover , .register button:hover , .editprofil button:hover{
+    background-color: #ff291d;
+}
+
+.login .form button>img , .register button>img , .editprofil button>img{
+    width: 26px;
+    height: 26px;
+    margin-right: 0.5rem;
+}
+.login .form .field , .register div{
+    width: 13rem;
+}
+
+.login .form input , .register div input , .editprofil #utilisateur input{
+    width: 100%;
+    padding: 0.7rem 0.5rem 0.7rem 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 2px solid #ff5950;
+    font-family: Roboto, 'sans-serif';
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.login .form input:focus , .register div input:focus ,.editprofil #utilisateur input:focus{
+    outline: none;
+}
+
+.editprofil form {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 40vh;
+}
+
+.editprofil #utilisateur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem 4rem 1rem 4rem;
+    border-radius: 9px;
+}
+
+.editprofil button{
+    width: fit-content;
+    background-color: #ff5950;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    padding: 0.8rem 2rem 0.8rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    font-family: Roboto , sans-serif;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+
+}
+
+.editprofil #utilisateur div {
+    width: 13rem;
+}
+
+.editprofil .retour{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+.editprofil a{
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    background-color: #FF9F5C;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.6rem 2rem 0.6rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    font-family: Roboto , sans-serif;
+    border-radius: 3px;
+}
+.editprofil a>img{
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+}
+
+.editprofil a:hover{
+    background-color: #ff8117;
+}
+
+
+/* Page panier */
+
+.panier h2{
+    text-align: center;
+    font-family: Roboto Serif , serif;
+    font-size: 28px;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.panier .container-table{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.panier .table th , .panier .table td{
+    border-bottom : 2px solid black;
+    text-align: center;
+    cursor: default;
+}
+
+.panier .table th{
+    /*background-color: #ff5950 ;*/
+    background-color: #272c33;
+    padding: 1rem 2rem 1rem 2rem;
+    text-transform: uppercase;
+    font-family: Roboto, 'serif';
+    color: #FFFFFF;
+}
+
+.panier .table td{
+    padding: 1rem;
+    font-family: Roboto ,sans-serif;
+}
+
+.panier .table {
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+    border-radius: 7px;
+    margin-top: 1rem;
+}
+
+.panier .tfoot th{
+    background-color: #272c33;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    text-transform: uppercase;
+    font-family: Roboto, 'serif';
+    color: #FFFFFF;
+    border-bottom : 2px solid black;
+    text-align: center;
+    cursor: default;
+}
+
+.panier .tfoot{
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.panier .table td>a{
+    text-decoration: none;
+    background-color: #ff5950 ;
+    color: #FFFFFF;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+.panier .table td>a:hover{
+    background-color: #ff291d;
+}
+
+.panier .tfoot th>a{
+    display: flex;
+    align-items: center;
+    background-color: #ff5950;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.6rem 2rem 0.6rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    font-family: Roboto , sans-serif;
+    border-radius: 3px;
+}
+
+.panier .tfoot th>a:hover{
+    background-color: #ff291d;
+}
+
+.panier .tfoot th>a>img{
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+}
+
+.panier .validation a{
+    background-color: #ff5950;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.8rem 2rem 0.8rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    font-family: Roboto Serif , Serif;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.panier .validation a>img{
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+}
+
+.panier .validation a:hover{
+    background-color: #ff291d;
+}
+
+.panier .validation{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+/* Erreur Panier */
+
+.erreurPanier div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 50vh;
+}
+
+.erreurPanier p{
+    font-family: Roboto , sans-serif;
+    font-size: 26px;
+}
+
+.erreurPanier a{
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    background-color: #FF9F5C;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.6rem 2rem 0.6rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    font-family: Roboto , sans-serif;
+    border-radius: 3px;
+}
+
+.erreurPanier a:hover{
+    background-color: #ff8117;
+}
+
+.erreurPanier a>img{
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+}
+
+
+/* Page Profil */
+
+.profil h2{
+    text-align: center;
+    font-family: "Roboto Serif" , serif;
+    margin-top: 2.5rem;
+    cursor: default;
+    font-size: 22px;
+}
+
+.profil .image-profil{
+    display: flex;
+    justify-content: center;
+}
+.profil .infoprofil {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.profil .infoprofil .list-profil{
+    margin-left: 4rem;
+}
+.profil .infoprofil .list-profil .text1{
+    text-align: center;
+    font-family: Roboto , sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.profil .infoprofil .list-profil .text2{
+    margin-left: 0.30rem;
+    font-family: Roboto sans-serif;
+    font-size: 18px;
+}
+
+
+
+.profil .table th , .profil .table td{
+    border-bottom : 2px solid black;
+    text-align: center;
+    cursor: default;
+}
+
+.profil .table th{
+    /*background-color: #ff5950 ;*/
+    background-color: #272c33;
+    padding: 1rem 2rem 1rem 2rem;
+    text-transform: uppercase;
+    font-family: Roboto, 'serif';
+    color: #FFFFFF;
+}
+
+.profil .table td{
+    padding: 1rem;
+    font-family: Roboto ,sans-serif;
+}
+
+.profil .table td>a{
+    text-decoration: none;
+    background-color: #ff5950 ;
+    color: #FFFFFF;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+.profil .table td>a:hover{
+    background-color: #ff291d;
+}
+
+.profil .table {
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+    border-radius: 7px;
+    margin-top: 1rem;
+}
+.profil .container-table{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profil .edit{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.profil .edit a{
+    background-color: #ff5950;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.8rem 2rem 0.8rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    font-family: Roboto , sans-serif;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+
+.profil .edit a:hover{
+    background-color: #ff291d;
+}
+
+.profil .edit a>img{
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+}
+
+/* Page dashboard */

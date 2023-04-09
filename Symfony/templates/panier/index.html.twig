@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CarBuy - Votre panier{% endblock %}
+
+{% block body %}
+    <main class="panier">
+        <h2>Panier de {{ utilisateur.prenom}} {{ utilisateur.nom }}</h2>
+
+    <div class="container-table">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Modèle</th>
+                    <th>Marque</th>
+                    <th>Carburant</th>
+                    <th>Transmission</th>
+                    <th>Prix</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for produit in panier %}
+                    <tr>
+                        <td>{{ produit.nom }}</td>
+                        <td>{{ produit.marque.nom }} </td>
+                        <td>{{ produit.carburant }}</td>
+                        <td>{{ produit.vitesse }}</td>
+                        <td>{{ produit.prix }} €</td>
+                        <td>
+                            <a href={{ path('supprimer_panier' , {'id' : produit.id}) }}>Supprimer</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td>Votre panier est vide</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <table class="tfoot">
+            <tr>
+                <th>Total</th>
+                <th>{{ total }} €</th>
+                <th><a href={{ path('vider_panier') }}><img src="https://img.icons8.com/FFFFFF/ios11/2x/filled-trash.png">Vider mon panier</a></th>
+            </tr>
+        </table>
+
+    </div>
+        <div class="validation">
+            <a href={{ path('valider_panier') }}><img src="https://img.icons8.com/FFFFFF/m_outlined/2x/checkmark.png">Valider mon panier</a>
+        </div>
+    </main>
+{% endblock %}
