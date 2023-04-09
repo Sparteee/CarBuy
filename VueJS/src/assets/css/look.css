@@ -1,0 +1,23 @@
+html{
+    height: 100%;
+}
+
+body{
+    background-color: #f7f7f7;
+}
+
+h1{
+    font-family: 'Roboto Serif', serif;
+    font-size: 42px;
+    font-weight: unset;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    cursor:default;
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
