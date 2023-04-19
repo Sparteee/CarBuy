@@ -20,6 +20,7 @@ Pour ce site, j'ai choisi le thème d'un concessionnaire de voiture avec son sit
   
   - Pour la partie Symfony, la réservation de voiture ne donne qu'un bon de commande. Je suis parti du principe que acheter une voiture à X milliers d'euros sur Internet et en une seule fois est compliqué mais c'est un ajout possible.
   - Pour la partie VueJS, faire en sorte que le questionnaire soit changeable/modulable par l'administrateur du site
+  - Faire le site en responsive pour mobile
   
 # Installation & Exécution 
   
