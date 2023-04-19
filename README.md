@@ -27,6 +27,17 @@ Pour ce site, j'ai choisi le thème d'un concessionnaire de voiture avec son sit
   - Remplir le .env de son token secret Symfony
   - Au niveau de src de la partie symfony exécutez : ``` symfony server:start ```
   - Au niveau de l'index js de la partie VueJS exécutez : ``` npm run dev ```
+  
+  - Comptes de test : 
+    ```
+      Compte user : 
+		      - email : user@gmail.com
+		     - mdp : useruser
+
+      Compte admin : 
+		    - email : admin@gmail.com
+		    - mdp : testadmin
+    ```
 
 # Auteurs
 
