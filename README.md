@@ -31,7 +31,7 @@ Pour ce site, j'ai choisi le thème d'un concessionnaire de voiture avec son sit
   - Comptes de test : 
     ```
       Compte user : 
-		      - email : user@gmail.com
+		     - email : user@gmail.com
 		     - mdp : useruser
 
       Compte admin : 
